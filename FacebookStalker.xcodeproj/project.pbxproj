@@ -20,6 +20,8 @@
 		FA16A77615559D3F00781E01 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = FA16A77515559D3F00781E01 /* Growl Registration Ticket.growlRegDict */; };
 		FA16A7791555A16100781E01 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA16A77015559CF600781E01 /* Growl.framework */; };
 		FA16A85D1556AAF000781E01 /* ANDeletableTable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16A85C1556AAEF00781E01 /* ANDeletableTable.m */; };
+		FA16A8681556CF4400781E01 /* ANNotificationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16A8671556CF4400781E01 /* ANNotificationWindow.m */; };
+		FA16A86B1556D3B100781E01 /* ANNotificationBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16A86A1556D3B100781E01 /* ANNotificationBackground.m */; };
 		FA1C53D015535DFF00B300BC /* Accounts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1C53CE15535DFF00B300BC /* Accounts.xcdatamodeld */; };
 		FA1C53D51553602300B300BC /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1C53D41553602300B300BC /* Account.m */; };
 		FA1C53E21553682B00B300BC /* Accounts.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = FA1C53CE15535DFF00B300BC /* Accounts.xcdatamodeld */; };
@@ -119,6 +121,10 @@
 		FA16A77515559D3F00781E01 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		FA16A85B1556AAEF00781E01 /* ANDeletableTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDeletableTable.h; sourceTree = "<group>"; };
 		FA16A85C1556AAEF00781E01 /* ANDeletableTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDeletableTable.m; sourceTree = "<group>"; };
+		FA16A8661556CF4400781E01 /* ANNotificationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNotificationWindow.h; sourceTree = "<group>"; };
+		FA16A8671556CF4400781E01 /* ANNotificationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNotificationWindow.m; sourceTree = "<group>"; };
+		FA16A8691556D3B100781E01 /* ANNotificationBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNotificationBackground.h; sourceTree = "<group>"; };
+		FA16A86A1556D3B100781E01 /* ANNotificationBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNotificationBackground.m; sourceTree = "<group>"; };
 		FA1C53CF15535DFF00B300BC /* Accounts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Accounts.xcdatamodel; sourceTree = "<group>"; };
 		FA1C53D31553602300B300BC /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		FA1C53D41553602300B300BC /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
@@ -304,6 +310,10 @@
 			children = (
 				FA16A76D15559C8E00781E01 /* ANNotifications.h */,
 				FA16A76E15559C8E00781E01 /* ANNotifications.m */,
+				FA16A8661556CF4400781E01 /* ANNotificationWindow.h */,
+				FA16A8671556CF4400781E01 /* ANNotificationWindow.m */,
+				FA16A8691556D3B100781E01 /* ANNotificationBackground.h */,
+				FA16A86A1556D3B100781E01 /* ANNotificationBackground.m */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -749,6 +759,8 @@
 				FA27E5E71555855900D04FCE /* LogWindow.m in Sources */,
 				FA16A76F15559C8E00781E01 /* ANNotifications.m in Sources */,
 				FA16A85D1556AAF000781E01 /* ANDeletableTable.m in Sources */,
+				FA16A8681556CF4400781E01 /* ANNotificationWindow.m in Sources */,
+				FA16A86B1556D3B100781E01 /* ANNotificationBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,7 +70,9 @@
 
 - (void)reconnect {
     reconnectTimer = nil;
-    [self signOnWithUsername:reconnUsername password:reconnPassword];
+    if (![self isOnline]) {
+        [self signOnWithUsername:reconnUsername password:reconnPassword];
+    }
 }
 
 #pragma mark - Facebook Session -

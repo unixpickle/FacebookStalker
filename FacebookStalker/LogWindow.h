@@ -16,6 +16,7 @@
 
 @interface LogWindow : NSWindow <NSTableViewDelegate, NSTableViewDataSource> {
     NSPopUpButton * accounts;
+    NSScrollView * tableScrollView;
     ANDeletableTable * eventTable;
     Account * currentAccount;
     NSArray * events;

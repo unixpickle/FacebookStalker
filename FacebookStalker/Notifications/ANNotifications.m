@@ -40,13 +40,17 @@
                         @"Signon Failed", 
                         @"Typing",
                         @"Stopped Typing", nil];
-    [GrowlApplicationBridge notifyWithTitle:[titles objectAtIndex:type]
-                                description:message
-                           notificationName:[titles objectAtIndex:type]
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:@"Show"];
+    if (!supportsGrowl) {
+        [[[ANNotificationWindow alloc] initWithTitle:[titles objectAtIndex:type] message:message] show];
+    } else {
+        [GrowlApplicationBridge notifyWithTitle:[titles objectAtIndex:type]
+                                    description:message
+                               notificationName:[titles objectAtIndex:type]
+                                       iconData:nil
+                                       priority:0
+                                       isSticky:NO
+                                   clickContext:@"Show"];
+    }
 }
 
 @end

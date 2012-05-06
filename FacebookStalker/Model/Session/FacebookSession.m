@@ -128,6 +128,7 @@
         if (buddy) {
             buddy.nickname = object.nickname;
         } else {
+            NSLog(@"Creating a new buddy");
             Buddy * buddy = [NSEntityDescription insertNewObjectForEntityForName:@"Buddy"
                                                           inManagedObjectContext:account.managedObjectContext];
             buddy.jabberID = [object.jid description];

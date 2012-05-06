@@ -20,7 +20,7 @@
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag screen:(NSScreen *)screen {
     if ((self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag screen:screen])) {
         accounts = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(10, contentRect.size.height - 32, contentRect.size.width - 20, 22) pullsDown:NO];
-        NSScrollView * tableScrollView = [[NSScrollView alloc] initWithFrame:NSMakeRect(10, 10, contentRect.size.width - 20, contentRect.size.height - 52)];
+        tableScrollView = [[NSScrollView alloc] initWithFrame:NSMakeRect(10, 10, contentRect.size.width - 20, contentRect.size.height - 52)];
         eventTable = [[ANDeletableTable alloc] initWithFrame:[[tableScrollView contentView] bounds]];
         
         [accounts setTarget:self];
@@ -45,7 +45,7 @@
         
         NSTableColumn * dateColumn = [[NSTableColumn alloc] initWithIdentifier:@"Date"];
         [[dateColumn headerCell] setStringValue:@"Date/Time"];
-        [dateColumn setWidth:100];
+        [dateColumn setWidth:150];
         [dateColumn setEditable:NO];
         [eventTable addTableColumn:dateColumn];
         
@@ -136,8 +136,15 @@
 }
 
 - (void)handleEventsChanged {
+    BOOL scrollToBottom = YES;
+    if ([tableScrollView documentVisibleRect].origin.y == 0) {
+        scrollToBottom = YES;
+    }
     events = [currentAccount eventsSortedByDate];
     [eventTable reloadData];
+    if (scrollToBottom) {
+        [eventTable scrollToEndOfDocument:self];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

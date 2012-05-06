@@ -19,6 +19,7 @@
 
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag screen:(NSScreen *)screen {
     if ((self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag screen:screen])) {
+        [self setTitle:@"Preferences"];
         CGFloat height = contentRect.size.height;
         NSTextField * usernameLabel = [[NSTextField alloc] initWithFrame:NSMakeRect(12, height - 32, 66, 20)];
         NSTextField * passwordLabel = [[NSTextField alloc] initWithFrame:NSMakeRect(12, height - 64, 66, 20)];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Growl/Growl.h>
+#import "ANNotificationWindow.h"
 
 /*
  <string>Buddy Online</string>
