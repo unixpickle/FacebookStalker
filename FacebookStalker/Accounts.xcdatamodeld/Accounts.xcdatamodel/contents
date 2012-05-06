@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="buddies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Buddy" inverseName="account" inverseEntity="Buddy" syncable="YES"/>
+        <relationship name="eventLog" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="account" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Buddy" representedClassName="Buddy" syncable="YES">
+        <attribute name="jabberID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notify" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="account" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="buddies" inverseEntity="Account" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="buddy" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="buddyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="account" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="eventLog" inverseEntity="Account" syncable="YES"/>
+        <relationship name="buddy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Buddy" inverseName="events" inverseEntity="Buddy" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Buddy" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="120"/>
+    </elements>
+</model>
