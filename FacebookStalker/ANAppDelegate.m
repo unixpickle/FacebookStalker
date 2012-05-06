@@ -156,6 +156,12 @@
 
 - (void)statusItemSignIn:(id)sender {
     NSString * username = [[ANPreferences sharedPreferences] username];
+    
+    if ([username length] == 0) {
+        NSRunAlertPanel(@"Invalid username", @"Before you can log in, you must first set your username in the application preferences", @"OK", nil, nil);
+        return;
+    }
+    
     NSString * password = [[ANPreferences sharedPreferences] password];
     [[ANSessionManager sharedSessionManager] signOnWithUsername:username password:password];
 }

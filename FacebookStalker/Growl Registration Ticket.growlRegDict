@@ -21,6 +21,8 @@
         <string>Buddy Offline</string>
         <string>Message Received</string>
         <string>Signed Online</string>
+        <string>Signed Offline</string>
+        <string>Signon Failed</string>
         <string>Typing</string>
         <string>Stopped Typing</string>
 	</array>
