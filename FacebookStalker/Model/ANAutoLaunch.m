@@ -31,7 +31,7 @@
 		LSSharedFileListItemRef item = (LSSharedFileListItemRef)object;
 		CFURLRef itemURL;
 		if (LSSharedFileListItemResolve(item, 0, &itemURL, NULL) == noErr) {
-			CFStringRef origPath = CFURLCopyPath(itemURL);
+			CFStringRef origPath = CFURLCopyFileSystemPath(itemURL, kCFURLPOSIXPathStyle);
 			NSString * string = [(__bridge_transfer NSString *)origPath stringByStandardizingPath];
 			if ([string isEqualToString:bundlePath]) {
 				wasFound = YES;
@@ -63,7 +63,7 @@
 		LSSharedFileListItemRef item = (LSSharedFileListItemRef)object;
 		CFURLRef itemURL;
 		if (LSSharedFileListItemResolve(item, 0, &itemURL, NULL) == noErr) {
-			CFStringRef origPath = CFURLCopyPath(itemURL);
+			CFStringRef origPath = CFURLCopyFileSystemPath(itemURL, kCFURLPOSIXPathStyle);
 			NSString * string = [(__bridge_transfer NSString *)origPath stringByStandardizingPath];
 			if ([string isEqualToString:bundlePath]) {
 				LSSharedFileListItemRemove(theLoginItemsRef, item);
